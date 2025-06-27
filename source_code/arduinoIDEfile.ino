@@ -5,7 +5,7 @@
 #include <DNSServer.h>
 #include <SPIFFS.h>
 
-const char* AP_SSID = "IQtest fake lol";  // AP SSID
+const char* AP_SSID = "free wifi";  // fake AP SSID
 const byte DNS_PORT = 53;
 
 DNSServer dnsServer;
