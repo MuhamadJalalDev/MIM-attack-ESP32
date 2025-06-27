@@ -10,8 +10,8 @@ also you need the arduino IDE to upload the code to the esp32 through a cable an
 
 
 esp32 Type
-![image alt](https://github.com/MuhamadJalalDev/news-website-template/blob/main/screenshots/screenshot3.png)
+![image alt](https://github.com/MuhamadJalalDev/MIM-attack-ESP32/blob/main/img/esp.jpg)
 
 
 Captive portal screen shot
-![image alt](https://github.com/MuhamadJalalDev/news-website-template/blob/main/screenshots/screenshot3.png)
+![image alt](https://github.com/MuhamadJalalDev/MIM-attack-ESP32/blob/main/img/login.png)
