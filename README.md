@@ -1,19 +1,99 @@
-# MIM-attack-ESP32
-ever thought about hacking wifi passwords with the esp32 ? well now you can!!
+# 🔥 ESP32 Wi-Fi MITM Captive Portal
 
-you are free to use my code hence I made it public but please consider giving me credit I would really appretiate it thanks!
+An original Wi-Fi **Man-in-the-Middle (MITM)** tool built with an **ESP32**. This project creates a **fake access point** that mimics public Wi-Fi, tricks users into entering their real Wi-Fi password, and logs captured credentials — all without a laptop or external software.
 
-also use this for educational purposes only
+> ⚠️ **For educational and authorized testing purposes only. Do not use on networks you do not own or have explicit permission to test.**
 
-now to perform this attack you need an ESP32-WROOM-32UE and an external antena for longer range if you want it's optional though
-also you need the arduino IDE to upload the code to the esp32 through a cable and to do that you need to download the esp32 library
-after everything is set up go to the source_code in this repository and you can download the arduinoIDEfile.ino and double click it and upload the code or you could just 
-copy and paste the code from raw code for the esp32.txt file and then upload it in arduino keep in mind that the password and ip address that is enterd by the victim device will be shown in the serial monitor in the arduino ide.
+---
+
+## 🚀 Features
+
+- ✅ Creates a realistic fake Wi-Fi network
+- ✅ Custom captive portal asking for Wi-Fi password
+- ✅ Captures and logs passwords to ESP32 SPIFFS
+- ✅ View logs from any browser (no serial monitor needed)
+- ✅ Secret admin page: `http://192.168.4.1/admin12345`
+- ✅ Auto-refreshing logs page with “Clear Logs” button
+- ✅ Fully standalone — no PC required after flashing
+
+---
+
+## 📸 Screenshots
+
+**Login Page:**
+
+![Login Page](https://github.com/MuhamadJalalDev/MIM-attack-ESP32/blob/main/img/newlogin.png)
+
+**Captured Logs Admin Page:**
+
+![Admin Page](https://github.com/MuhamadJalalDev/MIM-attack-ESP32/blob/main/img/captured.png)
+
+---
+
+## 🛠️ Hardware Requirements
+
+- [x] ESP32 Development Board
+      ![image alt](https://github.com/MuhamadJalalDev/MIM-attack-ESP32/blob/main/img/esp.jpg)
+
+- [x] Micro-USB cable
 
 
-esp32 Type
-![image alt](https://github.com/MuhamadJalalDev/MIM-attack-ESP32/blob/main/img/esp.jpg)
+- [x] Arduino IDE or PlatformIO
+- (Optional) Breadboard or enclosure for deployment & antena for longer range
+
+---
+
+## 📦 Installation
+
+1. **Flash the code:**
+   - Open the `.ino` or `.cpp` file in Arduino IDE
+   - Install required libraries: `WiFi.h`, `WebServer.h`, `DNSServer.h`, `SPIFFS.h`
+   - Choose `ESP32 Dev Module` and correct COM port
+   - Click **Upload**
+
+2. **Connect to the ESP32 Wi-Fi:**
+   - Network name: `WiFi name`
+
+3. **Visit the fake portal:**
+   - Open a browser and go to any site (or `192.168.4.1`)
+   - Enter a test password in the fake login form
+
+4. **View captured credentials:**
+   - Navigate to `http://192.168.4.1/admin12345`
+   - Logs auto-refresh every 10 seconds
+
+5. **Clear captured logs:**
+   - Click **“Clear Logs 🗑️”** on the admin page
+
+---
+
+## 🧠 How It Works
+
+- Creates a SoftAP (Access Point)
+- DNS spoofing redirects all domains to captive portal
+- Victim submits password via fake form
+- ESP32 stores credentials in `creds.txt` on SPIFFS
+- Admin panel allows live viewing and clearing of logs
+
+---
+
+## 👨‍💻 Author
+
+**Muhamad Jalal**  
+Security Researcher | 3rd Year IT Student  
+
+---
+
+## 📜 Disclaimer
+
+This tool is intended **only for educational purposes** or authorized security assessments. The misuse of this tool could result in criminal charges. **You are responsible** for your actions.
+
+---
+
+## ⭐️ Support or Feature Requests?
+
+Feel free to open an issue or contact me directly if you want:
+
+muhamadjalal1300@gmail.com
 
 
-Captive portal screen shot
-![image alt](https://github.com/MuhamadJalalDev/MIM-attack-ESP32/blob/main/img/login.png)
