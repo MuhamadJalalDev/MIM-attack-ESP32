@@ -8,7 +8,7 @@ An original Wi-Fi **Man-in-the-Middle (MITM)** tool built with an **ESP32**. Thi
 
 ## 🚀 Features
 
-- ✅ Creates a realistic fake Wi-Fi network
+- ✅ Creates a replica Wi-Fi network
 - ✅ Custom captive portal asking for Wi-Fi password
 - ✅ Captures and logs passwords to ESP32 SPIFFS
 - ✅ View logs from any browser (no serial monitor needed)
@@ -51,19 +51,25 @@ An original Wi-Fi **Man-in-the-Middle (MITM)** tool built with an **ESP32**. Thi
    - Choose `ESP32 Dev Module` and correct COM port
    - Click **Upload**
 
-2. **Connect to the ESP32 Wi-Fi:**
+2. **Deauthenticate the Victom Wifi:**
+   - Deauthenticate using airmon-ng  : `sudo aireplay-ng --deauth 100 -a [BSSID] wlan0`
+     or
+   - using another esp32 device for deauthentication here is a link to that it's very easy to setup: https://github.com/tesa-klebeband/ESP32-Deauther
+
+
+3. ** Victom connect's to the ESP32 Wi-Fi:**
    - Network name: `WiFi name`
 
-3. **Visit the fake portal:**
+4. **Visit the fake portal:**
    - Open a browser and go to any site (or `192.168.4.1`)
    - Enter a test password in the fake login form
 
-4. **View captured credentials:**
+5. **View captured credentials:**
    - Navigate to `http://192.168.4.1/admin12345`
    - Logs auto-refresh every 10 seconds
 
-5. **Clear captured logs:**
-   - Click **“Clear Logs 🗑️”** on the admin page
+6. **Clear captured logs:**
+   - Click **“Clear Logs 🗑”** on the admin page
 
 ---
 
